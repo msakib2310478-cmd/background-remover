@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Remover - AI Powered</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🎨 Background Remover</h1>
+        <p class="subtitle">Remove image backgrounds instantly with AI</p>
+      </header>
+
+      <main>
+        <!-- Upload Section -->
+        <div class="upload-section" id="uploadSection">
+          <div class="drop-zone" id="dropZone">
+            <div class="drop-zone-content">
+              <div class="upload-icon">📁</div>
+              <p class="drop-text">Drag & drop your image here</p>
+              <p class="or-text">or</p>
+              <label class="file-label">
+                <input type="file" id="imageInput" accept="image/*" hidden>
+                <span class="browse-btn">Browse Files</span>
+              </label>
+              <p class="file-types">Supports: JPG, PNG, WEBP</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Preview Section -->
+        <div class="preview-section" id="previewSection">
+          <div class="preview-container">
+            <div class="preview-box">
+              <h3>Original</h3>
+              <div class="image-wrapper">
+                <img id="originalImage" alt="Original image">
+              </div>
+            </div>
+            <div class="arrow">→</div>
+            <div class="preview-box">
+              <h3>Result</h3>
+              <div class="image-wrapper checkered">
+                <img id="resultImage" alt="Result with background removed">
+                <div class="loading-overlay" id="loadingOverlay">
+                  <div class="spinner"></div>
+                  <p>Removing background...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button id="removeBtn" class="btn btn-primary">
+              <span class="btn-icon">✨</span>
+              Remove Background
+            </button>
+            <a id="downloadLink" class="btn btn-success" download="background-removed.png">
+              <span class="btn-icon">⬇️</span>
+              Download Result
+            </a>
+            <button id="resetBtn" class="btn btn-secondary">
+              <span class="btn-icon">🔄</span>
+              New Image
+            </button>
+          </div>
+        </div>
+
+        <!-- Error Message -->
+        <div class="error-message" id="errorMessage">
+          <span class="error-icon">⚠️</span>
+          <span class="error-text"></span>
+        </div>
+      </main>
+
+      <footer>
+        <p>Powered by AI • Made with ❤️</p>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
